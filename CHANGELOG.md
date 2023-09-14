@@ -4,6 +4,10 @@ This is the changelog file of TheFunPackage.
 
 **Note:** All the dates below are in the IST time format.
 
+## <i>Version - 1.0.2 (14/9/2023)</i>
+
+1. Updated the following modules: Guesser
+
 ## <i>Version - 1.0.1 (14/9/2023)</i>
 
 1. Added the following dependencies to "setup.py": importlib-metadata

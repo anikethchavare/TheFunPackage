@@ -33,7 +33,7 @@ from colorama import Fore, Style
 
 # Variables - Package Information
 __name__ = "TheFunPackage"
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 __description__ = "This package is only meant for fun and to entertain you!"
 __license__ = "Apache License 2.0"
 __author__ = "Aniketh Chavare"

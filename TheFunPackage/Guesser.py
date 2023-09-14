@@ -21,7 +21,6 @@ limitations under the License.
 # Imports
 import json
 import requests
-from types import NoneType
 
 # Function 1 - Age
 def age(name, country=None):
@@ -31,7 +30,7 @@ def age(name, country=None):
     # Parameters & Data Types
     paramaters_data = {
         "name": [str, "a string"],
-        "country": [(str, NoneType), "a string"]
+        "country": [(str, type(None)), "a string"]
     }
 
     # Checking the Data Types
@@ -69,7 +68,7 @@ def gender(name, country=None):
     # Parameters & Data Types
     paramaters_data = {
         "name": [str, "a string"],
-        "country": [(str, NoneType), "a string"]
+        "country": [(str, type(None)), "a string"]
     }
 
     # Checking the Data Types
