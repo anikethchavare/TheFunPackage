@@ -28,7 +28,7 @@ with open("README.md") as readme_file:
 # Setup Arguments
 setup_args = dict (
     name = "TheFunPackage",
-    version = "1.0.0",
+    version = "1.0.1",
     description = "This package is only meant for fun and to entertain you!",
     long_description = README,
     long_description_content_type = "text/markdown",
@@ -44,7 +44,8 @@ setup_args = dict (
         "colorama",
         "requests",
         "pyjokes",
-        "randfacts"
+        "randfacts",
+        "importlib-metadata"
     ],
     classifiers = [
         "Development Status :: 5 - Production/Stable",

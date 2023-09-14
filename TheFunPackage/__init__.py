@@ -33,7 +33,7 @@ from colorama import Fore, Style
 
 # Variables - Package Information
 __name__ = "TheFunPackage"
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 __description__ = "This package is only meant for fun and to entertain you!"
 __license__ = "Apache License 2.0"
 __author__ = "Aniketh Chavare"
@@ -195,7 +195,15 @@ def fact(topic="general"):
 def bored():
     # Fetching and Returning the Data
     try:
-        return json.loads(requests.get("https://boredapi.com/api/activity").text)
+        # Fetching the Activity
+        response = json.loads(requests.get("https://boredapi.com/api/activity").text)
+
+        # Deleting Unwanted Keys
+        del response["price"]
+        del response["key"]
+
+        # Returning the Activity
+        return response
     except requests.ConnectionError:
         raise ConnectionError("A connection error occurred. Please try again.")
     except:
