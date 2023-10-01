@@ -2,15 +2,15 @@
 
 <p align="center"><img src="https://github.com/TheFunPackage/TheFunPackage-Python/assets/50455489/f433be1e-6189-4985-bebc-a3469a46d686" width="600" height="300"></p>
 
-<p align="center">This package is only meant for fun and to entertain you! Scroll down to learn more.</p>
+<p align="center">This Python package is only meant for fun and to entertain you! Scroll down to learn more.</p>
 
 <p align="center">Get started with TheFunPackage right away! Read the docs <a href="https://anikethchavare.gitbook.io/thefunpackage">here</a>.</p>
 
 ## Package Information
 
 1. **Name**: TheFunPackage</br>
-2. **Version**: 1.0.2</br>
-3. **Description**: This package is only meant for fun and to entertain you!</br>
+2. **Version**: 1.0.3</br>
+3. **Description**: This Python package is only meant for fun and to entertain you!</br>
 4. **License**: Apache License 2.0</br>
 5. **Author**: Aniketh Chavare ([GitHub Profile](https://github.com/anikethchavare))</br>
 6. **Author E-Mail**: anikethchavare@outlook.com</br>
@@ -28,11 +28,11 @@ For this package to work, you don't need to install any external software librar
 
 ## Changelog
 
-Go to the `CHANGELOG.md` file to see the changelog.
+Go to the [CHANGELOG.md](https://github.com/TheFunPackage/TheFunPackage-Python/blob/main/CHANGELOG.md) file to see the changelog.
 
 ## Credits
 
-Go to the `CREDITS.md` file to see the credits.
+Go to the [CREDITS.md](https://github.com/TheFunPackage/TheFunPackage-Python/blob/main/CREDITS.md) file to see the credits.
 
 ## License
 

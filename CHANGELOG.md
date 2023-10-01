@@ -4,6 +4,10 @@ This is the changelog file of TheFunPackage.
 
 **Note:** All the dates below are in the IST time format.
 
+## <i>Version - 1.0.3 (1/10/2023)</i>
+
+1. Edited the package's description.
+
 ## <i>Version - 1.0.2 (14/9/2023)</i>
 
 1. Updated the following modules: Guesser
@@ -11,7 +15,7 @@ This is the changelog file of TheFunPackage.
 ## <i>Version - 1.0.1 (14/9/2023)</i>
 
 1. Added the following dependencies to "setup.py": importlib-metadata
-2. Updated the "bored()" function in the "__init__.py" file.
+2. Updated the "bored()" function in the "init.py" file.
 
 ## <i>Version - 1.0.0 (13/9/2023)</i>
 
