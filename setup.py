@@ -28,8 +28,8 @@ with open("README.md") as readme_file:
 # Setup Arguments
 setup_args = dict (
     name = "TheFunPackage",
-    version = "1.0.3",
-    description = "This Python package is only meant for fun and to entertain you!",
+    version = "1.0.4",
+    description = "This package is only meant for fun and to entertain you!",
     long_description = README,
     long_description_content_type = "text/markdown",
     license = "Apache License 2.0",
@@ -37,15 +37,20 @@ setup_args = dict (
     include_package_data = True,
     author = "Aniketh Chavare",
     author_email = "anikethchavare@outlook.com",
-    url = "https://github.com/TheFunPackage/TheFunPackage-Python",
-    download_url = "https://pypi.org/project/TheFunPackage",
+    project_urls = {
+        "Homepage": "https://pypi.org/project/TheFunPackage",
+        "Repository": "https://github.com/anikethchavare/TheFunPackage",
+        "Documentation": "https://anikethchavare.gitbook.io/thefunpackage",
+        "Download": "https://github.com/anikethchavare/TheFunPackage/releases",
+        "Changelog": "https://github.com/anikethchavare/TheFunPackage/blob/main/CHANGELOG.md",
+        "Issues": "https://github.com/anikethchavare/TheFunPackage/issues"
+    },
     install_requires = [
-        "beautifulsoup4",
+        "PySyst",
         "colorama",
         "requests",
         "pyjokes",
-        "randfacts",
-        "importlib-metadata"
+        "randfacts"
     ],
     classifiers = [
         "Development Status :: 5 - Production/Stable",

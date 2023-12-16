@@ -40,25 +40,20 @@ def age(name, country=None):
         else:
             raise TypeError("The '{0}' argument must be {1}.".format(parameter, paramaters_data[parameter][1]))
 
-    # Fetching and Returning the Age
+    # Try/Except - Fetching the Age
     try:
-        # Checking the Value of "country"
-        if (country == None):
-            # Fetching the Age
-            response = json.loads(requests.get("https://api.agify.io?name=" + name).text)
-        else:
-            # Fetching the Age
-            response =  json.loads(requests.get("https://api.agify.io?name=" + name + "&country_id=" + country).text)
-
-        # Deleting Unwanted Keys
-        del response["count"]
-
-        # Returning the Age
-        return response
+        # Variables
+        response = json.loads(requests.get("https://api.agify.io?name=" + name).text) if country == None else json.loads(requests.get("https://api.agify.io?name=" + name + "&country_id=" + country).text)
     except requests.ConnectionError:
         raise ConnectionError("A connection error occurred. Please try again.")
     except:
-        raise Exception("Something went wrong. Please try again.")
+        raise Exception("An error occurred while fetching the age. Please try again.")
+
+    # Deleting Unwanted Keys
+    del response["count"]
+
+    # Returning the Age
+    return response
 
 # Function 2 - Gender
 def gender(name, country=None):
@@ -78,43 +73,38 @@ def gender(name, country=None):
         else:
             raise TypeError("The '{0}' argument must be {1}.".format(parameter, paramaters_data[parameter][1]))
 
-    # Fetching and Returning the Gender
+    # Try/Except - Fetching the Gender
     try:
-        # Checking the Value of "country"
-        if (country == None):
-            # Fetching the Gender
-            response =  json.loads(requests.get("https://api.genderize.io?name=" + name).text)
-        else:
-            # Fetching the Gender
-            response =  json.loads(requests.get("https://api.genderize.io?name=" + name + "&country_id=" + country).text)
-
-        # Deleting Unwanted Keys
-        del response["count"]
-
-        # Returning the Gender
-        return response
+        # Variables
+        response = json.loads(requests.get("https://api.genderize.io?name=" + name).text) if country == None else json.loads(requests.get("https://api.genderize.io?name=" + name + "&country_id=" + country).text)
     except requests.ConnectionError:
         raise ConnectionError("A connection error occurred. Please try again.")
     except:
-        raise Exception("Something went wrong. Please try again.")
+        raise Exception("An error occurred while fetching the gender. Please try again.")
+
+    # Deleting Unwanted Keys
+    del response["count"]
+
+    # Returning the Gender
+    return response
 
 # Function 3 - Nation
 def nation(name):
     # Checking the Data Type of "name"
     if (isinstance(name, str)):
-        # Fetching and Returning the Nation
+        # Try/Except - Fetching the Nation
         try:
-            # Fetching the Nation
+            # Variables
             response = json.loads(requests.get("https://api.nationalize.io?name=" + name).text)
-
-            # Deleting Unwanted Keys
-            del response["count"]
-
-            # Returning the Nation
-            return response
         except requests.ConnectionError:
             raise ConnectionError("A connection error occurred. Please try again.")
         except:
-            raise Exception("Something went wrong. Please try again.")
+            raise Exception("An error occurred while fetching the nation. Please try again.")
+
+        # Deleting Unwanted Keys
+        del response["count"]
+
+        # Returning the Nation
+        return response
     else:
         raise TypeError("The 'name' argument must be a string.")

@@ -4,6 +4,12 @@ This is the changelog file of TheFunPackage.
 
 **Note:** All the dates below are in the IST time format.
 
+## <i>Version - 1.0.4 (16/12/2023)</i>
+
+1. Edited the following files: "setup.py", "README.md", and "CREDITS.md"
+2. Edited the package's description and social preview.
+3. Updated the following modules: Guesser
+
 ## <i>Version - 1.0.3 (1/10/2023)</i>
 
 1. Edited the package's description.

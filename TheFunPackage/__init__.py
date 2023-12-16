@@ -27,38 +27,38 @@ import pyjokes
 import requests
 import randfacts
 import webbrowser
-import importlib_metadata
-from bs4 import BeautifulSoup
 from colorama import Fore, Style
+from PySyst.Packages import Python
 
 # Variables - Package Information
 __name__ = "TheFunPackage"
-__version__ = "1.0.3"
-__description__ = "This Python package is only meant for fun and to entertain you!"
+__version__ = "1.0.4"
+__description__ = "This package is only meant for fun and to entertain you!"
 __license__ = "Apache License 2.0"
 __author__ = "Aniketh Chavare"
 __author_email__ = "anikethchavare@outlook.com"
-__github_url__ = "https://github.com/TheFunPackage/TheFunPackage-Python"
+__github_url__ = "https://github.com/anikethchavare/TheFunPackage"
 __pypi_url__ = "https://pypi.org/project/TheFunPackage"
 __docs_url__ = "https://anikethchavare.gitbook.io/thefunpackage"
 
-# Function 1 - Version Check
-def version_check():
+# Try/Except - Checking the Version
+try:
     # Variables
-    system_version = importlib_metadata.version("TheFunPackage")
-    package_version = BeautifulSoup(requests.get(__pypi_url__).text, "html.parser").body.main.find_all("div")[1].h1.text.strip().split()[1]
+    versions = Python("TheFunPackage").get_versions()
 
     # Checking the Version
-    if (system_version < package_version):
+    if (versions["Upgrade Needed"]):
         # Checking the Environment
         if ("idlelib.run" in sys.modules):
-            print("You are using TheFunPackage version " + system_version + ", however version " + package_version + " is available.")
+            print("You are using TheFunPackage version " + versions["Installed"] + ", however version " + versions["Latest"] + " is available.")
             print("Upgrade to the latest version for new features and improvements using this command: pip install --upgrade TheFunPackage" + "\n")
         else:
-            print(Fore.YELLOW + "You are using TheFunPackage version " + system_version + ", however version " + package_version + " is available.")
+            print(Fore.YELLOW + "You are using TheFunPackage version " + versions["Installed"] + ", however version " + versions["Latest"] + " is available.")
             print(Fore.YELLOW + "Upgrade to the latest version for new features and improvements using this command: " + Fore.CYAN + "pip install --upgrade TheFunPackage" + Style.RESET_ALL + "\n")
+except:
+    pass
 
-# Function 2 - GitHub
+# Function 1 - GitHub
 def github():
     # Opening TheFunPackage's GitHub Repository
     try:
@@ -66,7 +66,7 @@ def github():
     except:
         raise Exception("An error occurred while opening the GitHub repository. Please try again.")
 
-# Function 3 - PyPI
+# Function 2 - PyPI
 def pypi():
     # Opening TheFunPackage's PyPI Page
     try:
@@ -74,7 +74,7 @@ def pypi():
     except:
         raise Exception("An error occurred while opening the PyPI page. Please try again.")
 
-# Function 4 - Docs
+# Function 3 - Docs
 def docs():
     # Opening TheFunPackage's Docs
     try:
@@ -82,10 +82,7 @@ def docs():
     except:
         raise Exception("An error occurred while opening the docs. Please try again.")
 
-# Running the "version_check()" Function
-version_check()
-
-# Function 5 - Game
+# Function 4 - Game
 def game(name):
     # Variables
     games_list = ["ant", "avoid", "bagels", "bounce", "cannon", "connect", "crypto", "fidget", "flappy", "guess", "illusion", "life", "madlibs", "maze", "memory", "minesweeper", "pacman", "paint", "pong", "rps", "simonsays", "snake", "tictactoe", "tiles", "tron", "typing", "tennis-game", "rock-paper-scissors"]
@@ -97,10 +94,10 @@ def game(name):
             # Checking the Value of "name"
             if (name == "tennis-game"):
                 # Opening the Tennis Game
-                webbrowser.open("https://anikethchavare.vercel.app/tennis-game")
+                webbrowser.open("https://anikethchavare.vercel.app/projects/tennis-game")
             elif (name == "rock-paper-scissors"):
                 # Opening the Rock-Paper-Scissors Game
-                webbrowser.open("https://anikethchavare.vercel.app/rock-paper-scissors")
+                webbrowser.open("https://anikethchavare.vercel.app/projects/rock-paper-scissors")
             else:
                 # Playing the "freegames" Game
                 os.system("python -m freegames." + name)
@@ -109,7 +106,7 @@ def game(name):
     else:
         raise TypeError("The 'name' argument must be a string.")
 
-# Function 6 - Joke
+# Function 5 - Joke
 def joke(topic="random"):
     # Variables
     joke_topics = ["random", "general", "programming", "knock-knock"]
@@ -118,41 +115,44 @@ def joke(topic="random"):
 
     # Checking the Data Type of "topic"
     if (isinstance(topic, str)):
-        # Checking the Value of "topic"
+        # Checking if "topic" is Valid
         if (topic in joke_topics):
-            # Fetching and Returning the Joke
+            # Checking the Value of "topic"
             if (topic == "random"):
-                # Fetching the Joke
+                # Try/Except - Fetching the Joke
                 try:
+                    # Variables
                     response = json.loads(requests.get(api_endpoint.format("random")).text)
                 except requests.ConnectionError:
                     raise ConnectionError("A connection error occurred. Please try again.")
                 except:
-                    raise Exception("Something went wrong. Please try again.")
+                    raise Exception("An error occurred while fetching the joke. Please try again.")
 
                 # Returning the Joke
                 return response["setup"] + " " + response["punchline"]
             elif (topic in ["general", "knock-knock"]):
-                # Fetching the Joke
+                # Try/Except - Fetching the Joke
                 try:
+                    # Variables
                     response = json.loads(requests.get(api_endpoint.format(topic + "/random")).text)[0]
                 except requests.ConnectionError:
                     raise ConnectionError("A connection error occurred. Please try again.")
                 except:
-                    raise Exception("Something went wrong. Please try again.")
+                    raise Exception("An error occurred while fetching the joke. Please try again.")
 
                 # Returning the Joke
                 return response["setup"] + " " + response["punchline"]
             elif (topic == "programming"):
                 # Checking the Value of "programming_joke_random"
                 if (programming_joke_random == 1):
-                    # Fetching the Joke
+                    # Try/Except - Fetching the Joke
                     try:
+                        # Variables
                         response = json.loads(requests.get(api_endpoint.format(topic + "/random")).text)[0]
                     except requests.ConnectionError:
                         raise ConnectionError("A connection error occurred. Please try again.")
                     except:
-                        raise Exception("Something went wrong. Please try again.")
+                        raise Exception("An error occurred while fetching the joke. Please try again.")
 
                     # Returning the Joke
                     return response["setup"] + " " + response["punchline"]
@@ -164,47 +164,47 @@ def joke(topic="random"):
     else:
         raise TypeError("The 'topic' argument must be a string.")
 
-# Function 7 - Fact
+# Function 6 - Fact
 def fact(topic="general"):
     # Variables
     fact_topics = ["general", "cats"]
 
     # Checking the Data Type of "topic"
     if (isinstance(topic, str)):
-        # Checking the Value of "topic"
+        # Checking if "topic" is Valid
         if (topic in fact_topics):
-            # Fetching and Returning the Fact
+            # Checking the Value of "topic"
             if (topic == "general"):
                 # Returning the Fact
                 return randfacts.get_fact(filter_enabled=True, only_unsafe=False)
             elif (topic == "cats"):
-                # Fetching the Fact
+                # Try/Except - Fetching the Fact
                 try:
                     # Returning the Fact
                     return json.loads(requests.get("https://catfact.ninja/fact").text)["fact"]
                 except requests.ConnectionError:
                     raise ConnectionError("A connection error occurred. Please try again.")
                 except:
-                    raise Exception("Something went wrong. Please try again.")
+                    raise Exception("An error occurred while fetching the fact. Please try again.")
         else:
             raise Exception("The 'topic' argument must be either 'general' or 'cats'.")
     else:
         raise TypeError("The 'topic' argument must be a string.")
 
-# Function 8 - Bored
+# Function 7 - Bored
 def bored():
-    # Fetching and Returning the Data
+    # Try/Except - Fetching the Activity
     try:
-        # Fetching the Activity
+        # Variables
         response = json.loads(requests.get("https://boredapi.com/api/activity").text)
-
-        # Deleting Unwanted Keys
-        del response["price"]
-        del response["key"]
-
-        # Returning the Activity
-        return response
     except requests.ConnectionError:
         raise ConnectionError("A connection error occurred. Please try again.")
     except:
-        raise Exception("Something went wrong. Please try again.")
+        raise Exception("An error occurred while fetching the activity. Please try again.")
+
+    # Deleting Unwanted Keys
+    del response["price"]
+    del response["key"]
+
+    # Returning the Activity
+    return response

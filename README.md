@@ -1,20 +1,20 @@
 <h1 align="center">This is TheFunPackage.</h1>
 
-<p align="center"><img src="https://github.com/TheFunPackage/TheFunPackage-Python/assets/50455489/f433be1e-6189-4985-bebc-a3469a46d686" width="600" height="300"></p>
+<p align="center"><img src="https://github.com/anikethchavare/TheFunPackage/assets/50455489/0d27a7d1-9ae6-4f0c-a6ad-4bee8f0c4b20" width="600" height="300"></p>
 
-<p align="center">This Python package is only meant for fun and to entertain you! Scroll down to learn more.</p>
+<p align="center">This package is only meant for fun and to entertain you! Scroll down to learn more.</p>
 
 <p align="center">Get started with TheFunPackage right away! Read the docs <a href="https://anikethchavare.gitbook.io/thefunpackage">here</a>.</p>
 
 ## Package Information
 
 1. **Name**: TheFunPackage</br>
-2. **Version**: 1.0.3</br>
-3. **Description**: This Python package is only meant for fun and to entertain you!</br>
+2. **Version**: 1.0.4</br>
+3. **Description**: This package is only meant for fun and to entertain you!</br>
 4. **License**: Apache License 2.0</br>
 5. **Author**: Aniketh Chavare ([GitHub Profile](https://github.com/anikethchavare))</br>
 6. **Author E-Mail**: anikethchavare@outlook.com</br>
-7. **GitHub URL**: [https://github.com/TheFunPackage/TheFunPackage-Python](https://github.com/TheFunPackage/TheFunPackage-Python)</br>
+7. **GitHub URL**: [https://github.com/anikethchavare/TheFunPackage](https://github.com/anikethchavare/TheFunPackage)</br>
 8. **PyPI URL**: [https://pypi.org/project/TheFunPackage](https://pypi.org/project/TheFunPackage)</br>
 9. **Docs URL**: [https://anikethchavare.gitbook.io/thefunpackage](https://anikethchavare.gitbook.io/thefunpackage)
 
@@ -24,15 +24,15 @@ Run this command in your terminal to install TheFunPackage:
 
 `pip install TheFunPackage`
 
-For this package to work, you don't need to install any external software libraries or packages. Just run the above command in your terminal and you will be good to go.
+For this package to work, you don't need to install any external software libraries or packages. Just run the above command in your terminal and you are good to go.
 
 ## Changelog
 
-Go to the [CHANGELOG.md](https://github.com/TheFunPackage/TheFunPackage-Python/blob/main/CHANGELOG.md) file to see the changelog.
+Go to the [CHANGELOG.md](https://github.com/anikethchavare/TheFunPackage/blob/main/CHANGELOG.md) file to see the changelog.
 
 ## Credits
 
-Go to the [CREDITS.md](https://github.com/TheFunPackage/TheFunPackage-Python/blob/main/CREDITS.md) file to see the credits.
+Go to the [CREDITS.md](https://github.com/anikethchavare/TheFunPackage/blob/main/CREDITS.md) file to see the credits.
 
 ## License
 
