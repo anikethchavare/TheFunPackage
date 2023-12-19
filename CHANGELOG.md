@@ -4,6 +4,10 @@ This is the changelog file of TheFunPackage.
 
 **Note:** All the dates below are in the IST time format.
 
+## <i>Version - 1.0.5 (19/12/2023)</i>
+
+1. Edited the package's "init.py" file.
+
 ## <i>Version - 1.0.4 (16/12/2023)</i>
 
 1. Edited the following files: "setup.py", "README.md", and "CREDITS.md"

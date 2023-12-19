@@ -28,11 +28,11 @@ import requests
 import randfacts
 import webbrowser
 from colorama import Fore, Style
-from PySyst.Packages import Python
+from PySyst.Packages import package_versions
 
 # Variables - Package Information
 __name__ = "TheFunPackage"
-__version__ = "1.0.4"
+__version__ = "1.0.5"
 __description__ = "This package is only meant for fun and to entertain you!"
 __license__ = "Apache License 2.0"
 __author__ = "Aniketh Chavare"
@@ -44,7 +44,7 @@ __docs_url__ = "https://anikethchavare.gitbook.io/thefunpackage"
 # Try/Except - Checking the Version
 try:
     # Variables
-    versions = Python("TheFunPackage").get_versions()
+    versions = package_versions("python", "PySyst")
 
     # Checking the Version
     if (versions["Upgrade Needed"]):

@@ -9,7 +9,7 @@
 ## Package Information
 
 1. **Name**: TheFunPackage</br>
-2. **Version**: 1.0.4</br>
+2. **Version**: 1.0.5</br>
 3. **Description**: This package is only meant for fun and to entertain you!</br>
 4. **License**: Apache License 2.0</br>
 5. **Author**: Aniketh Chavare ([GitHub Profile](https://github.com/anikethchavare))</br>

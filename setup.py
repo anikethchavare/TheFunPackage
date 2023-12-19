@@ -28,7 +28,7 @@ with open("README.md") as readme_file:
 # Setup Arguments
 setup_args = dict (
     name = "TheFunPackage",
-    version = "1.0.4",
+    version = "1.0.5",
     description = "This package is only meant for fun and to entertain you!",
     long_description = README,
     long_description_content_type = "text/markdown",
