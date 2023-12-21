@@ -22,17 +22,19 @@ limitations under the License.
 import os
 import sys
 import json
+import pickle
 import random
 import pyjokes
 import requests
 import randfacts
 import webbrowser
 from colorama import Fore, Style
+from datetime import datetime, timedelta
 from PySyst.Packages import package_versions
 
 # Variables - Package Information
 __name__ = "TheFunPackage"
-__version__ = "1.0.5"
+__version__ = "1.0.6"
 __description__ = "This package is only meant for fun and to entertain you!"
 __license__ = "Apache License 2.0"
 __author__ = "Aniketh Chavare"
@@ -41,22 +43,53 @@ __github_url__ = "https://github.com/anikethchavare/TheFunPackage"
 __pypi_url__ = "https://pypi.org/project/TheFunPackage"
 __docs_url__ = "https://anikethchavare.gitbook.io/thefunpackage"
 
-# Try/Except - Checking the Version
-try:
+# Function 1 - Version Check
+def version_check():
     # Variables
-    versions = package_versions("python", "PySyst")
+    directory = os.path.dirname(os.path.realpath(__file__)).replace(os.sep, "/")
 
-    # Checking the Version
-    if (versions["Upgrade Needed"]):
-        # Checking the Environment
-        if ("idlelib.run" in sys.modules):
-            print("You are using TheFunPackage version " + versions["Installed"] + ", however version " + versions["Latest"] + " is available.")
-            print("Upgrade to the latest version for new features and improvements using this command: pip install --upgrade TheFunPackage" + "\n")
-        else:
-            print(Fore.YELLOW + "You are using TheFunPackage version " + versions["Installed"] + ", however version " + versions["Latest"] + " is available.")
-            print(Fore.YELLOW + "Upgrade to the latest version for new features and improvements using this command: " + Fore.CYAN + "pip install --upgrade TheFunPackage" + Style.RESET_ALL + "\n")
-except:
-    pass
+    # Nested Function 1 - Version Check 2
+    def version_check_2(make_directory):
+        # Try/Except - Checking the Version
+        try:
+            # Variables
+            versions = package_versions("python", "TheFunPackage")
+
+            # Checking the Version
+            if (versions["Upgrade Needed"]):
+                # Checking the Environment
+                if ("idlelib.run" in sys.modules):
+                    print("You are using TheFunPackage version " + versions["Installed"] + ", however version " + versions["Latest"] + " is available.")
+                    print("Upgrade to the latest version for new features and improvements using this command: pip install --upgrade TheFunPackage" + "\n")
+                else:
+                    print(Fore.YELLOW + "You are using TheFunPackage version " + versions["Installed"] + ", however version " + versions["Latest"] + " is available.")
+                    print(Fore.YELLOW + "Upgrade to the latest version for new features and improvements using this command: " + Fore.CYAN + "pip install --upgrade TheFunPackage" + Style.RESET_ALL + "\n")
+
+            # Making the Cache Directory
+            if (make_directory):
+                # Try/Except - Making the Cache Directory
+                try:
+                    os.mkdir(directory + "/cache")
+                except FileExistsError:
+                    pass
+
+            # Opening and Writing to the Cache File
+            with open(directory + "/cache/version.cache", "wb") as cache_file:
+                pickle.dump({"Future Time": datetime.now() + timedelta(hours=24)}, cache_file)
+        except:
+            pass
+
+    # Checking if Cache File Exists
+    if (os.path.exists(directory + "/cache/version.cache")):
+        # Opening and Reading the Cache File
+        with open(directory + "/cache/version.cache", "rb") as cache_file:
+            # Comparing the Time
+            if (pickle.load(cache_file)["Future Time"] < datetime.now()):
+                # Running the "version_check_2()" Function
+                version_check_2(False)
+    else:
+        # Running the "version_check_2()" Function
+        version_check_2(True)
 
 # Function 1 - GitHub
 def github():
@@ -81,6 +114,9 @@ def docs():
         webbrowser.open(__docs_url__)
     except:
         raise Exception("An error occurred while opening the docs. Please try again.")
+
+# Running the "version_check()" Function
+version_check()
 
 # Function 4 - Game
 def game(name):
