@@ -39,7 +39,7 @@ __license__ = "Apache License 2.0"
 __author__ = "Aniketh Chavare"
 __author_email__ = "anikethchavare@outlook.com"
 __github_url__ = "https://github.com/anikethchavare/TheFunPackage"
-__docs_url__ = "https://anikethchavare.gitbook.io/thefunpackage"
+__docs_url__ = "https://github.com/anikethchavare/TheFunPackage/wiki"
 
 # Function 1 - Version Check
 def version_check():

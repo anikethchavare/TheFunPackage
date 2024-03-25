@@ -4,7 +4,7 @@
 
 <p align="center">This package is only meant for fun and to entertain you! Scroll down to learn more.</p>
 
-<p align="center">Get started with TheFunPackage right away! Read the docs <a href="https://anikethchavare.gitbook.io/thefunpackage">here</a>.</p>
+<p align="center">Get started with TheFunPackage right away! Read the docs <a href="https://github.com/anikethchavare/TheFunPackage/wiki">here</a>.</p>
 
 ## Package Information
 
@@ -15,15 +15,21 @@
 5. **Author**: Aniketh Chavare ([GitHub Profile](https://github.com/anikethchavare))</br>
 6. **Author E-Mail**: anikethchavare@outlook.com</br>
 7. **GitHub URL**: [https://github.com/anikethchavare/TheFunPackage](https://github.com/anikethchavare/TheFunPackage)</br>
-8. **Docs URL**: [https://anikethchavare.gitbook.io/thefunpackage](https://anikethchavare.gitbook.io/thefunpackage)
+8. **Docs URL**: [https://github.com/anikethchavare/TheFunPackage/wiki](https://github.com/anikethchavare/TheFunPackage/wiki)
 
 ## Installation & Setup
 
-Run this command in your terminal to install TheFunPackage:
+To install the **Python** package, run this command in your terminal:
 
 `pip install git+https://github.com/anikethchavare/TheFunPackage.git`
 
-For this package to work, you don't need to install any external software libraries or packages. Just run the above command in your terminal and you are good to go.
+To use the **JavaScript** library, add this script in your HTML code:
+
+`<script src="https://cdn.jsdelivr.net/gh/anikethchavare/TheFunPackage@main/JavaScript/TheFunPackage.js"></script>`
+
+Alternatively, add this script in your HTML code to use the minified version of the library:
+
+`<script src="https://cdn.jsdelivr.net/gh/anikethchavare/TheFunPackage@main/JavaScript/TheFunPackage.min.js"></script>`
 
 ## Changelog
 

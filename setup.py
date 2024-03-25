@@ -40,7 +40,7 @@ setup_args = dict (
     project_urls = {
         "Homepage": "https://github.com/anikethchavare/TheFunPackage",
         "Repository": "https://github.com/anikethchavare/TheFunPackage",
-        "Documentation": "https://anikethchavare.gitbook.io/thefunpackage",
+        "Documentation": "https://github.com/anikethchavare/TheFunPackage/wiki",
         "Download": "https://github.com/anikethchavare/TheFunPackage/releases",
         "Changelog": "https://github.com/anikethchavare/TheFunPackage/blob/main/CHANGELOG.md",
         "Issues": "https://github.com/anikethchavare/TheFunPackage/issues"

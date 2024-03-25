@@ -22,7 +22,7 @@ const __license__ = "Apache License 2.0"
 const __author__ = "Aniketh Chavare"
 const __author_email__ = "anikethchavare@outlook.com"
 const __github_url__ = "https://github.com/anikethchavare/TheFunPackage"
-const __docs_url__ = "https://anikethchavare.gitbook.io/thefunpackage"
+const __docs_url__ = "https://github.com/anikethchavare/TheFunPackage/wiki"
 
 // Function 1 - GitHub
 function github() {
